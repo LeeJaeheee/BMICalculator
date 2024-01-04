@@ -142,6 +142,7 @@ class ViewController: UIViewController {
         alert.addAction(button1)
         alert.addAction(button2)
         
+        view.endEditing(true)
         present(alert, animated: true)
     }
     
