@@ -76,7 +76,6 @@ class ViewController: UIViewController {
             tf.text = "\(Int.random(in: limitRanges[i]))"
             textFieldEditing(tf)
         }
-        validateResultButton()
     }
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
