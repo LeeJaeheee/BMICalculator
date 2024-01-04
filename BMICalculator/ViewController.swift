@@ -96,14 +96,16 @@ class ViewController: UIViewController {
     
     // FIXME: textFieldList[1]이 Editing Did End로 연결돼있음;
     @IBAction func textFieldEditing(_ sender: UITextField) {
-        sender.text?.removeAll { !$0.isNumber }
-        
         if sender.text == "" {
             sender.layer.borderColor = UIColor.black.cgColor
-        } else if let num = Int(sender.text!), limitRanges[sender.tag] ~= num {
-            sender.layer.borderColor = UIColor.systemGreen.cgColor
         } else {
-            sender.layer.borderColor = UIColor.systemRed.cgColor
+            sender.text?.removeAll { !$0.isNumber }
+            
+            if let num = Int(sender.text!), limitRanges[sender.tag] ~= num {
+                sender.layer.borderColor = UIColor.systemGreen.cgColor
+            } else {
+                sender.layer.borderColor = UIColor.systemRed.cgColor
+            }
         }
         validateResultButton()
     }
