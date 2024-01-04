@@ -38,10 +38,10 @@ class ViewController: UIViewController {
         
         for tf in textFieldList {
             tf.layer.borderWidth = 1
-            tf.layer.borderColor = UIColor.black.cgColor
             tf.layer.cornerRadius = 12
             tf.clipsToBounds = true
             tf.keyboardType = .numberPad
+            textFieldEditing(tf)
         }
         textFieldList[1].isSecureTextEntry = true
         
@@ -58,14 +58,13 @@ class ViewController: UIViewController {
         resultButton.setTitleColor(.white, for: .normal)
         resultButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         resultButton.layer.cornerRadius = 8
-        resultButton.alpha = 0.3
-        resultButton.isEnabled = false
     }
     
     @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
+    // 버튼 탭하면 몸무게 보였다가 안보였다가..
     @IBAction func showWeightButtonTapped(_ sender: UIButton) {
         textFieldList[1].isSecureTextEntry.toggle()
         showWeightButton.isSelected.toggle()
@@ -93,8 +92,7 @@ class ViewController: UIViewController {
         showAlert(title: "BMI : " + String(format: "%.1f", bmi), message: "\n\(getBmiState(bmi: bmi)) 입니다!")
     }
     
-    
-    // FIXME: textFieldList[1]이 Editing Did End로 연결돼있음;
+    // 실시간으로 유효성 검사해서 borderColor 변경, 숫자만 입력되게 구현
     @IBAction func textFieldEditing(_ sender: UITextField) {
         if sender.text == "" {
             sender.layer.borderColor = UIColor.black.cgColor
@@ -124,16 +122,17 @@ class ViewController: UIViewController {
         }
     }
     
+    // 텍스트필드들에 입력된 값 범위 검증해서 결과 확인 버튼 활성화 여부 판단
     func validateResultButton() {
         let isValid = textFieldList.allSatisfy { $0.layer.borderColor == UIColor.systemGreen.cgColor }
         resultButton.isEnabled = isValid
         resultButton.alpha = isValid ? 1 : 0.3
     }
     
+    // alert창에서 리셋 선택하면 텍스트필드들 리셋
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        // TODO: 리셋 선택하면 텍스트필드들 리셋하기
         let button1 = UIAlertAction(title: "리셋", style: .destructive) { _ in
             self.resetTextFields()
         }
