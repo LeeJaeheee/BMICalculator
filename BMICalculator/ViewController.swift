@@ -81,19 +81,17 @@ class ViewController: UIViewController {
     
     @IBAction func resultButtonTapped(_ sender: UIButton) {
         guard let text = textFieldList[0].text, let height = Double(text) else {
-            // TODO: 메세지 쓰기...
-            showAlert(title: "오류 발생", message: "")
+            showAlert(title: "오류 발생", message: "키 옵셔널 바인딩 실패")
             return
         }
         
         guard let text = textFieldList[1].text, let weight = Double(text) else {
-            // TODO: 메세지 쓰기...
-            showAlert(title: "오류 발생", message: "")
+            showAlert(title: "오류 발생", message: "몸무게 옵셔널 바인딩 실패")
             return
         }
         
         let bmi = getBmi(height: height, weight: weight)
-        showAlert(title: String(format: "%.1f", bmi), message: getBmiState(bmi: bmi) + " 입니다!")
+        showAlert(title: "BMI : " + String(format: "%.1f", bmi), message: "\n\(getBmiState(bmi: bmi)) 입니다!")
     }
     
     

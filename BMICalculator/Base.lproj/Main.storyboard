@@ -74,7 +74,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="SVc-ns-nm3"/>
+                                    <action selector="textFieldEditing:" destination="BYZ-38-t0r" eventType="editingChanged" id="mMB-4S-OaJ"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5M-uf-4Qh">
