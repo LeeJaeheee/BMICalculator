@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2109E922B47A03E00EE9BF1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D2109E912B47A03E00EE9BF1 /* IQKeyboardManagerSwift */; };
 		D2275E5C2B456A9900244952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2275E5B2B456A9900244952 /* AppDelegate.swift */; };
 		D2275E5E2B456A9900244952 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2275E5D2B456A9900244952 /* SceneDelegate.swift */; };
 		D2275E602B456A9900244952 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2275E5F2B456A9900244952 /* ViewController.swift */; };
 		D2275E632B456A9900244952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2275E612B456A9900244952 /* Main.storyboard */; };
 		D2275E652B456A9B00244952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2275E642B456A9B00244952 /* Assets.xcassets */; };
 		D2275E682B456A9B00244952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2275E662B456A9B00244952 /* LaunchScreen.storyboard */; };
+		D23395982B46619E00843D37 /* InactiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23395972B46619E00843D37 /* InactiveViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		D2275E642B456A9B00244952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2275E672B456A9B00244952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2275E692B456A9B00244952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D23395972B46619E00843D37 /* InactiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2109E922B47A03E00EE9BF1 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 				D2275E642B456A9B00244952 /* Assets.xcassets */,
 				D2275E662B456A9B00244952 /* LaunchScreen.storyboard */,
 				D2275E692B456A9B00244952 /* Info.plist */,
+				D23395972B46619E00843D37 /* InactiveViewController.swift */,
 			);
 			path = BMICalculator;
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = BMICalculator;
+			packageProductDependencies = (
+				D2109E912B47A03E00EE9BF1 /* IQKeyboardManagerSwift */,
+			);
 			productName = BMICalculator;
 			productReference = D2275E582B456A9900244952 /* BMICalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = D2275E4F2B456A9900244952;
+			packageReferences = (
+				D2109E902B47A03E00EE9BF1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = D2275E592B456A9900244952 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2275E602B456A9900244952 /* ViewController.swift in Sources */,
+				D23395982B46619E00843D37 /* InactiveViewController.swift in Sources */,
 				D2275E5C2B456A9900244952 /* AppDelegate.swift in Sources */,
 				D2275E5E2B456A9900244952 /* SceneDelegate.swift in Sources */,
 			);
@@ -367,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2109E902B47A03E00EE9BF1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.16;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2109E912B47A03E00EE9BF1 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2109E902B47A03E00EE9BF1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D2275E502B456A9900244952 /* Project object */;
 }
